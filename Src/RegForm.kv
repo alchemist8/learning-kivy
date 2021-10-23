@@ -1,0 +1,39 @@
+MyGrid
+
+<MyGrid>:
+    fname: fname
+    lname: lname
+    address: address
+    zipcode: zipcode
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            Label:
+                text: "First Name"
+            TextInput:
+                id: fname
+                multiline: False
+            Label:
+                text: "Last Name"
+            TextInput:
+                id: lname
+                multiline: False
+            Label:
+                text: "Address"
+            TextInput:
+                id: address
+                multiline: False
+            Label:
+                text: "Zip Code"
+            TextInput:
+                id: zipcode
+                # size_hint: 1, 1
+                # height: "20dp"
+                # width: "20dp"
+                multiline: False
+        Button:
+            text: "Submit"
+            size_hint: .2, .2
+            on_press: root.on_submit()
