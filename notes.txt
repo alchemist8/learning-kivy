@@ -1,0 +1,17 @@
+to build exe
+
+1. first generate the spec file
+-python -m PyInstaller --noconsole --name CBMS Src/main.py
+a spec file will be generated
+
+2. add this line to the spec file
+-from kivy_deps import sdl2, glew
+
+3. Then, find COLLECT() and add the data
+-Tree('Src\\'),
+add this after the exe this should contain all the source code tree with one entry point main file
+-*[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
+add this after the a.datas,
+
+4. Now build the spec file which will contain the exec file in dist folder with the app name (CBMS), which can be zipped and shared
+-python -m PyInstaller --noconsole CBMS.spec
