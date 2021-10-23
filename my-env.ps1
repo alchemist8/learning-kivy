@@ -1,3 +1,3 @@
 cd Scripts
-activate
+.\activate
 cd ../Src
